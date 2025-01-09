@@ -1,0 +1,109 @@
+:root{
+    --red: #c33241;
+    --pink: #f9ebec;
+}
+
+.animation-component{
+    display: flex;
+    gap: 5rem;
+}
+
+.course-number{
+    font-weight: 900;
+    font-size: 5rem;
+    margin: 0;
+}
+
+.course-images{
+    margin: auto;
+    transform: translate(-150%, 120%);
+}
+.course-images img{
+    width: 400px;
+}
+
+.animation-card-container{
+    cursor: pointer;
+    overflow: hidden;
+    width: 150px;
+    height: 300px;
+    background-color: var(--pink);
+    display: flex;
+    border-radius: 2rem;
+    flex-direction: column;
+    justify-content: end;
+    padding: 2rem;
+    transition: 0.8s ease-in-out;
+    position: relative;
+}
+.animation-card-container *{
+    position: relative;
+    z-index: 1;
+    transition: 0.8s ease-in-out, color 0.2s ease;
+}
+.course-title-wrap {
+    width: 200px;
+    height: fit-content;
+   transform: rotate(-90deg) translate(20%, -25%);
+}
+.animation-card-container.active .course-title-wrap{
+    transform: rotate(0) translate(75%, 110%);
+}
+.animation-card-container.active{
+    width: 400px;
+    color: var(--pink);
+    /* background-color: var(--red); */
+}
+.animation-card-container:not(.active){
+    color: var(--red);
+    /* transition: 0.8s ease-in-out; */
+}
+.animation-card-container.active .course-images{
+    transform: translate(0, 120%);
+}
+
+.animation-card-container::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--red);
+    border-radius: 50%;
+    transition: 0.8s ease-in-out;
+}
+
+.animation-card-container.active::after {
+    bottom: 0;
+    left: 0; 
+    transform: scale(150);
+}
+.view-courses{
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: auto;
+    transform: translate(150%, 6.5rem);
+}
+.animation-card-container.active .view-courses{
+    transform: translate(-10%,6.5rem);
+}
+.view-courses{
+    cursor: pointer;
+}
+.view-courses:hover .svg {
+    animation: arrowAnimation 1s ease-in-out infinite alternate;
+  }
+@keyframes arrowAnimation {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translate(25px, 0);
+    }
+}

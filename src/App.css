@@ -1,0 +1,12 @@
+body{
+  padding: 2rem 4rem;
+}
+h2{
+  font-weight: 500;
+}
+h2, h1 span:first-child{
+  color: #414141;
+}
+h1 span:last-child{
+  color: #1DA077;
+}
