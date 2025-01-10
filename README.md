@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Visit app/ app link
-https://task-2-fohbpjalc-biplavsitaulas-projects.vercel.app/
+https://task-2-vt.vercel.app/
 
 ## Available Scripts
 
